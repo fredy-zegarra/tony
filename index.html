@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tony Empaquetaduras - Fábrica de empaques de motor de alta calidad en Arequipa. Más de 10 años de experiencia en el sector automotor.">
-    <title>Tony Empaquetaduras | Fábrica de Empaques de Motor - Arequipa</title>
+    <title>Tony Empaquetaduras | Fábrica de Empaques de Alta Calidad - Arequipa</title>
+    <meta name="description" content="Empresa arequipeña especializada en fabricación de empaques para motores desde 2010. Calidad garantizada y servicio inmediato.">
     <style>
         * {
             margin: 0;
@@ -13,129 +13,133 @@
         }
 
         :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #f97316;
-            --dark-color: #1f2937;
-            --light-color: #f3f4f6;
-            --white: #ffffff;
-            --text-color: #374151;
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141929;
+            --bg-card: #1a1f3a;
+            --text-primary: #e8eaf0;
+            --text-secondary: #a0a6c0;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #60a5fa;
+            --accent-gold: #fbbf24;
+            --border-color: #2d3349;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: var(--text-color);
             overflow-x: hidden;
         }
 
         /* Header & Navigation */
         header {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border-bottom: 1px solid var(--border-color);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-md);
         }
 
         nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
             text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
-        .logo span {
-            color: var(--secondary-color);
+        .logo:hover {
+            transform: scale(1.05);
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
             align-items: center;
         }
 
-        .nav-menu a {
+        .nav-links a {
+            color: var(--text-primary);
             text-decoration: none;
-            color: var(--dark-color);
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s ease;
             position: relative;
         }
 
-        .nav-menu a::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
         }
 
-        .nav-menu a:hover::after {
+        .nav-links a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
         }
 
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
         .contact-btn {
-            background: var(--secondary-color);
-            color: var(--white) !important;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             padding: 0.6rem 1.5rem;
-            border-radius: 25px;
-            transition: var(--transition);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .contact-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
-        }
-
-        .contact-btn::after {
-            display: none;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark-color);
-            transition: var(--transition);
-            border-radius: 3px;
+            box-shadow: var(--shadow-md);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
-            color: var(--white);
-            padding: 150px 5% 100px;
-            margin-top: 70px;
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -143,498 +147,461 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .hero-content {
-            max-width: 1400px;
+            max-width: 1000px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-text h1 span {
-            color: var(--secondary-color);
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-        }
-
-        /* About Section */
-        #quienes-somos {
-            background: var(--light-color);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-text h3 {
-            color: var(--primary-color);
+        .hero h1 {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--accent-secondary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInDown 0.8s ease;
         }
 
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            animation: fadeIn 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Stats Section */
         .stats {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: -3rem auto 0;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 10;
         }
 
         .stat-item {
             text-align: center;
             padding: 1.5rem;
-            background: var(--light-color);
             border-radius: 10px;
+            background: var(--bg-secondary);
+            transition: transform 0.3s ease;
         }
 
-        .stat-item h4 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
+        .stat-item:hover {
+            transform: translateY(-5px);
         }
 
-        .stat-item p {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            margin: 0;
-        }
-
-        /* MVV Section */
-        .mvv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .mvv-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .mvv-card:nth-child(2) {
-            border-top-color: var(--secondary-color);
-        }
-
-        .mvv-card:nth-child(3) {
-            border-top-color: #10b981;
-        }
-
-        .mvv-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .mvv-icon {
+        .stat-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .mvv-card h3 {
-            color: var(--dark-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
         }
 
-        .mvv-card p {
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1400px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+        }
+
+        .card p {
+            color: var(--text-secondary);
             line-height: 1.8;
+        }
+
+        /* Mission, Vision, Culture Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+            padding: 3rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-primary);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent-gold);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .value-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .value-content {
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        .value-content ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .value-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .value-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
         }
 
         /* Services Section */
-        #servicios {
-            background: var(--light-color);
-        }
-
-        .services-grid {
+        .services-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .service-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--white);
-        }
-
-        .service-content {
+        .service-item {
+            background: var(--bg-card);
             padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
 
-        .service-content h3 {
-            color: var(--dark-color);
+        .service-item:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-secondary);
+        }
+
+        .service-item h4 {
+            color: var(--accent-secondary);
             margin-bottom: 1rem;
-        }
-
-        .service-content p {
-            line-height: 1.8;
-            color: var(--text-color);
+            font-size: 1.3rem;
         }
 
         /* Contact Section */
-        #contacto {
-            background: var(--dark-color);
-            color: var(--white);
-        }
-
-        #contacto .section-header h2,
-        #contacto .section-header p {
-            color: var(--white);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
         .contact-info {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 10px;
-            transition: var(--transition);
+        .contact-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
-        .contact-item:hover {
-            background: rgba(255,255,255,0.1);
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
         }
 
         .contact-icon {
-            font-size: 2rem;
-            color: var(--secondary-color);
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
-        .contact-item h4 {
-            margin-bottom: 0.5rem;
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
         }
 
-        .contact-form {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: var(--border-radius);
+        .contact-card a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.1);
-            color: var(--white);
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+        .contact-card a:hover {
+            color: var(--accent-gold);
         }
 
         /* Footer */
         footer {
-            background: #0f172a;
-            color: var(--white);
-            padding: 3rem 5%;
-            text-align: center;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 5rem;
         }
 
-        footer p {
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent-primary);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
-        .social-links a:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
+        .footer-section a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
         }
 
         /* Responsive Design */
-        @media (max-width: 968px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: var(--transition);
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hamburger {
+        @media (max-width: 768px) {
+            .menu-toggle {
                 display: flex;
             }
 
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                border-top: 1px solid var(--border-color);
             }
 
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
+            .nav-links.active {
+                left: 0;
             }
 
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .about-content,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 100px 5% 60px;
-            }
-
-            .hero-text h1 {
-                font-size: 1.8rem;
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .stats {
                 grid-template-columns: 1fr;
+                margin: 2rem;
             }
 
-            section {
-                padding: 50px 5%;
+            .cards-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card,
+            .value-card,
+            .contact-card {
+                padding: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <header>
         <nav>
-            <a href="#" class="logo">Tony <span>Empaquetaduras</span></a>
-            <ul class="nav-menu" id="navMenu">
+            <a href="#" class="logo">
+                <span>⚙️</span>
+                <span>Tony Empaquetaduras</span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">Nosotros</a></li>
-                <li><a href="#mision-vision">Misión y Visión</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto" class="contact-btn">Contacto</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contacto" class="contact-btn">📞 Contactar</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -642,201 +609,265 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Fábrica de Empaques de <span>Alta Calidad</span></h1>
-                <p>Más de 14 años de experiencia en la fabricación de empaques para todo tipo de motores. Soluciones profesionales para el sector automotor en Arequipa.</p>
-                <div class="hero-buttons">
-                    <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
-                    <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Fábrica de Empaques de Alta Calidad</h1>
+                <p>Más de 10 años de experiencia en el sector automotor. Especialistas en fabricación de empaques para todo tipo de motores en Arequipa, Perú.</p>
+                <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
+                    Solicitar Cotización
+                </button>
+            </div>
+        </section>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-icon">📅</div>
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">✅</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Calidad Garantizada</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Servicio Inmediato</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clientes Satisfechos</div>
+            </div>
+        </div>
+
+        <section id="nosotros">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Quiénes Somos</h2>
+                <p class="section-subtitle">Una empresa arequipeña comprometida con la excelencia y la innovación en el sector automotor</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card scroll-reveal">
+                    <span class="card-icon">🏭</span>
+                    <h3>Nuestra Historia</h3>
+                    <p>Tony Empaquetaduras es una empresa arequipeña fundada en el año 2010. Desde entonces nos dedicamos con pasión a la fabricación y venta de empaques para todo tipo de motores, consolidándonos como líderes en el mercado regional.</p>
+                </div>
+                <div class="card scroll-reveal">
+                    <span class="card-icon">🔧</span>
+                    <h3>Experiencia Técnica</h3>
+                    <p>Con más de 14 años en el sector automotor, ofrecemos asesoría especializada para determinar el material idóneo según la función y necesidad específica de cada motor, garantizando rendimiento óptimo.</p>
+                </div>
+                <div class="card scroll-reveal">
+                    <span class="card-icon">🎖️</span>
+                    <h3>Compromiso de Calidad</h3>
+                    <p>Mantenemos los más altos estándares de calidad en cada producto que fabricamos. Nuestro compromiso es entregar empaques duraderos que superen las expectativas de nuestros clientes.</p>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600" alt="Empaques de motor">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="quienes-somos">
-        <div class="section-header">
-            <h2>¿Quiénes Somos?</h2>
-            <p>Conoce nuestra historia y trayectoria en el sector automotor</p>
-        </div>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Tony Empaquetaduras</h3>
-                <p>Somos una empresa arequipeña fundada en el año 2010, dedicada a la fabricación y venta de empaques para todo tipo de motores. Nuestra experiencia en el sector automotor nos ha permitido convertirnos en referentes de calidad y servicio en la región.</p>
-                <p>Ofrecemos asesoría especializada para utilizar el material idóneo según la función y necesidad específica de cada motor, garantizando así el mejor rendimiento y durabilidad.</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <h4>14+</h4>
-                        <p>Años de Experiencia</p>
+        <section id="valores">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Nuestros Valores Empresariales</h2>
+                <p class="section-subtitle">Los principios que guían nuestro trabajo diario y definen nuestra identidad corporativa</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card scroll-reveal">
+                    <span class="value-icon">🎯</span>
+                    <h3 class="value-title">Misión</h3>
+                    <div class="value-content">
+                        <p>Fabricar y comercializar empaques de alta calidad para motores automotrices e industriales, ofreciendo soluciones personalizadas que satisfagan las necesidades específicas de nuestros clientes.</p>
+                        <p style="margin-top: 1rem;">Nos comprometemos a proporcionar asesoría técnica especializada, utilizando materiales de primera calidad y manteniendo tiempos de respuesta inmediatos, contribuyendo así al óptimo funcionamiento y prolongación de la vida útil de los motores de nuestros clientes en todo el Perú.</p>
                     </div>
-                    <div class="stat-item">
-                        <h4>100%</h4>
-                        <p>Calidad Garantizada</p>
+                </div>
+
+                <div class="value-card scroll-reveal">
+                    <span class="value-icon">🌟</span>
+                    <h3 class="value-title">Visión</h3>
+                    <div class="value-content">
+                        <p>Ser reconocidos como la empresa líder en fabricación de empaques para motores en el sur del Perú para el año 2030, expandiendo nuestra presencia a nivel nacional.</p>
+                        <p style="margin-top: 1rem;">Aspiramos a ser la primera opción de talleres mecánicos, empresas de transporte y concesionarios automotrices, destacándonos por nuestra innovación continua, excelencia en el servicio y compromiso inquebrantable con la satisfacción del cliente.</p>
+                    </div>
+                </div>
+
+                <div class="value-card scroll-reveal">
+                    <span class="value-icon">💼</span>
+                    <h3 class="value-title">Cultura Empresarial</h3>
+                    <div class="value-content">
+                        <p>Nuestra cultura organizacional se fundamenta en valores sólidos que nos permiten crecer sosteniblemente:</p>
+                        <ul>
+                            <li><strong>Excelencia:</strong> Búsqueda constante de la perfección en cada empaque fabricado</li>
+                            <li><strong>Integridad:</strong> Honestidad y transparencia en todas nuestras relaciones comerciales</li>
+                            <li><strong>Innovación:</strong> Adaptación continua a nuevas tecnologías y materiales del sector</li>
+                            <li><strong>Trabajo en Equipo:</strong> Colaboración y respeto mutuo entre todos los miembros</li>
+                            <li><strong>Orientación al Cliente:</strong> El cliente es el centro de todas nuestras decisiones</li>
+                            <li><strong>Responsabilidad Social:</strong> Compromiso con el desarrollo de nuestra comunidad arequipeña</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="Taller de fabricación">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Mission, Vision, Culture Section -->
-    <section id="mision-vision">
-        <div class="section-header">
-            <h2>Nuestra Filosofía</h2>
-            <p>Los valores y principios que nos guían como organización</p>
-        </div>
-        <div class="mvv-grid">
-            <div class="mvv-card">
-                <div class="mvv-icon">🎯</div>
-                <h3>Misión</h3>
-                <p>Fabricar empaques de motor de la más alta calidad, brindando soluciones técnicas especializadas a nuestros clientes del sector automotor, industrial y agrícola, garantizando productos duraderos que optimicen el rendimiento de sus equipos y maquinaria.</p>
+        <section id="servicios">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones integrales en fabricación de empaques con altos estándares de calidad</p>
             </div>
-            <div class="mvv-card">
-                <div class="mvv-icon">🔭</div>
-                <h3>Visión</h3>
-                <p>Ser la empresa líder en fabricación de empaques a nivel regional, reconocida por nuestra excelencia en calidad, innovación en materiales y servicio al cliente, expandiendo nuestra presencia en el mercado nacional y siendo la primera opción para profesionales del sector automotor.</p>
-            </div>
-            <div class="mvv-card">
-                <div class="mvv-icon">💡</div>
-                <h3>Cultura Organizacional</h3>
-                <p>Nos fundamentamos en la calidad, profesionalismo y compromiso con nuestros clientes. Promovemos la mejora continua, la innovación en procesos y materiales, el trabajo en equipo y la asesoría técnica especializada que nos distingue en el mercado.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="servicios">
-        <div class="section-header">
-            <h2>Nuestros Servicios</h2>
-            <p>Soluciones especializadas para cada necesidad</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-image">🔧</div>
-                <div class="service-content">
-                    <h3>Fabricación de Empaques</h3>
-                    <p>Fabricamos empaques a pedido para caja, motor, compresora, rueda y lainas, siempre manteniendo nuestros altos estándares de calidad y servicio inmediato.</p>
+            <div class="cards-grid">
+                <div class="card scroll-reveal">
+                    <span class="card-icon">🔩</span>
+                    <h3>Fabricación a Medida</h3>
+                    <p>Fabricamos empaques personalizados a pedido para caja, motor, compresora, rueda y lainas. Cada pieza es elaborada con precisión según las especificaciones exactas de su vehículo o maquinaria.</p>
                 </div>
-            </div>
-            <div class="service-card">
-                <div class="service-image">📋</div>
-                <div class="service-content">
+
+                <div class="card scroll-reveal">
+                    <span class="card-icon">🧪</span>
+                    <h3>Materiales de Calidad</h3>
+                    <p>Utilizamos materiales de primera calidad seleccionados específicamente según la función y necesidad de cada motor. Nuestra experiencia nos permite recomendar el material idóneo para cada aplicación.</p>
+                </div>
+
+                <div class="card scroll-reveal">
+                    <span class="card-icon">💡</span>
                     <h3>Asesoría Técnica</h3>
-                    <p>Más de 14 años en el sector automotor nos permiten brindar asesoría adicional para utilizar el material idóneo según la función y necesidad de los motores.</p>
+                    <p>Más de 14 años en el sector automotor nos permiten ofrecer asesoría técnica especializada, ayudándole a elegir la mejor solución para su motor y garantizando resultados óptimos.</p>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-image">⚙️</div>
-                <div class="service-content">
-                    <h3>Materiales Especializados</h3>
-                    <p>Trabajamos con una amplia variedad de materiales de alta calidad, seleccionando el más apropiado para garantizar el óptimo rendimiento de cada aplicación.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contacto">
-        <div class="section-header">
-            <h2>Contáctanos</h2>
-            <p>Estamos aquí para atender tus consultas y necesidades</p>
-        </div>
-        <div class="contact-grid">
+            <div class="services-list scroll-reveal">
+                <div class="service-item">
+                    <h4>⚙️ Empaques de Motor</h4>
+                    <p>Juntas de culata, cárter, distribución y más</p>
+                </div>
+                <div class="service-item">
+                    <h4>📦 Empaques de Caja</h4>
+                    <p>Para transmisión manual y automática</p>
+                </div>
+                <div class="service-item">
+                    <h4>💨 Empaques de Compresora</h4>
+                    <p>Para sistemas de aire acondicionado y frenos</p>
+                </div>
+                <div class="service-item">
+                    <h4>🎡 Empaques de Rueda</h4>
+                    <p>Retenes y sellos de ejes</p>
+                </div>
+                <div class="service-item">
+                    <h4>📏 Lainas de Ajuste</h4>
+                    <p>En diversos espesores y materiales</p>
+                </div>
+                <div class="service-item">
+                    <h4>⚡ Servicio Inmediato</h4>
+                    <p>Atención rápida y eficiente</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">Contáctenos</h2>
+                <p class="section-subtitle">Estamos listos para atender sus necesidades con servicio inmediato y personalizado</p>
+            </div>
+
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-card scroll-reveal">
                     <div class="contact-icon">📱</div>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <p>+51 959 997 383</p>
-                    </div>
+                    <h3>WhatsApp / Teléfono</h3>
+                    <a href="tel:+51959997383">+51 959 997 383</a>
+                    <p style="color: var(--text-secondary); margin-top: 1rem;">Disponible de Lunes a Sábado<br>8:00 AM - 6:00 PM</p>
                 </div>
-                <div class="contact-item">
+
+                <div class="contact-card scroll-reveal">
                     <div class="contact-icon">📍</div>
-                    <div>
-                        <h4>Ubicación</h4>
-                        <p>Arequipa, Perú</p>
-                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Arequipa, Perú</p>
+                    <p style="color: var(--text-secondary); margin-top: 1rem;">Visite nuestras instalaciones o solicite entrega a domicilio</p>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
-                    <div>
-                        <h4>Horario de Atención</h4>
-                        <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábado: 8:00 AM - 1:00 PM</p>
-                    </div>
+
+                <div class="contact-card scroll-reveal">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Sitio Web</h3>
+                    <a href="https://www.tonyempaquetaduras.com" target="_blank">tonyempaquetaduras.com</a>
+                    <p style="color: var(--text-secondary); margin-top: 1rem;">Conozca más sobre nuestros productos y servicios</p>
                 </div>
             </div>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
-                </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>⚙️ Tony Empaquetaduras</h4>
+                <p>Empresa arequipeña especializada en fabricación de empaques de alta calidad desde 2010.</p>
+                <p style="margin-top: 1rem;">Calidad, experiencia y servicio inmediato.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Quiénes Somos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#valores">Valores</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Servicios</h4>
+                <a href="#servicios">Empaques de Motor</a>
+                <a href="#servicios">Empaques de Caja</a>
+                <a href="#servicios">Empaques de Compresora</a>
+                <a href="#servicios">Lainas de Ajuste</a>
+                <a href="#servicios">Asesoría Técnica</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>📱 +51 959 997 383</p>
+                <p>📍 Arequipa, Perú</p>
+                <p>🌐 www.tonyempaquetaduras.com</p>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Tony Empaquetaduras. Todos los derechos reservados.</p>
-        <p>Fábrica de empaques de alta calidad en Arequipa</p>
-        <div class="social-links">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="WhatsApp">💬</a>
-            <a href="#" aria-label="Instagram">📷</a>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tony Empaquetaduras. Todos los derechos reservados. | Diseñado con dedicación para servir mejor</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+                const navLinks = document.querySelector('.nav-links');
+                const menuToggle = document.querySelector('.menu-toggle');
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
             });
         });
 
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(element => {
+            observer.observe(element);
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -850,35 +881,106 @@
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('¡Gracias por contactarnos! Nos comunicaremos contigo pronto.');
-            e.target.reset();
+        // Header background on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.style.background = 'rgba(20, 25, 41, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%)';
+                header.style.backdropFilter = 'none';
+            }
+            
+            lastScroll = currentScroll;
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        }
 
-        const observer = new IntersectionObserver((entries) => {
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const target = parseInt(num.textContent);
+                        if (!isNaN(target)) {
+                            animateCounter(num, target);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.5 });
 
-        // Observe all cards and sections
-        document.querySelectorAll('.mvv-card, .service-card, .about-text').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
         });
+
+        // WhatsApp floating button (optional enhancement)
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.href = 'https://wa.me/51959997383';
+        whatsappBtn.target = '_blank';
+        whatsappBtn.innerHTML = '💬';
+        whatsappBtn.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        `;
+        
+        whatsappBtn.addEventListener('mouseenter', () => {
+            whatsappBtn.style.transform = 'scale(1.1)';
+            whatsappBtn.style.boxShadow = '0 6px 24px rgba(37, 211, 102, 0.6)';
+        });
+        
+        whatsappBtn.addEventListener('mouseleave', () => {
+            whatsappBtn.style.transform = 'scale(1)';
+            whatsappBtn.style.boxShadow = '0 4px 16px rgba(37, 211, 102, 0.4)';
+        });
+        
+        document.body.appendChild(whatsappBtn);
     </script>
 </body>
 </html>
