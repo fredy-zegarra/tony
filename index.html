@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tony Empaquetaduras | Fábrica de empaques de motor</title>
+    <meta name="description"
+        content="Fabricación de empaques de motor a medida, asesoría en materiales y servicio ágil en Arequipa.">
+    <meta name="theme-color" content="#0b0f14">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --bg-elev: #11161d;
+            --bg-soft: #131a22;
+            --text: #e9eef5;
+            --muted: #a7b1bd;
+            --brand: #6ea8ff;
+            /* azul EDteam-like */
+            --brand-2: #9f6aff;
+            /* púrpura de acento */
+            --border: #1e2630;
+            --success: #2ec27e;
+            --danger: #ff6b6b;
+            --radius: 16px;
+            --radius-sm: 12px;
+            --shadow: 0 8px 28px rgba(0, 0, 0, .35);
+            --maxw: 1180px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(159, 106, 255, .12), transparent 60%),
+                radial-gradient(900px 500px at 90% -10%, rgba(110, 168, 255, .10), transparent 55%),
+                linear-gradient(180deg, #0a0e13, var(--bg));
+            color: var(--text);
+            font-family: Plus Jakarta Sans, Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        ::selection {
+            background: rgba(110, 168, 255, .25)
+        }
+
+        /* Header estilo EDteam */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: saturate(120%) blur(12px);
+            background: rgba(14, 18, 24, .7);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .bar {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background:
+                linear-gradient(135deg, rgba(110, 168, 255, .25), rgba(159, 106, 255, .22)),
+                linear-gradient(180deg, var(--bg-soft), #0c1016);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            font-size: 22px;
+        }
+
+        nav {
+            margin-left: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 10px 14px;
+            border-radius: 999px;
+            color: var(--muted);
+            transition: 180ms ease;
+            border: 1px solid transparent;
+            background: transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+            background: #161c24;
+        }
+
+        .nav-link.active {
+            color: #fff;
+            background: linear-gradient(135deg, #253043, #1a212c);
+            border-color: #2a3649;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+        }
+
+        /* Hero con gradiente */
+        .hero {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 38px 20px 24px;
+            display: grid;
+            gap: 26px;
+            grid-template-columns: 1.1fr .9fr;
+        }
+
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .hero-card {
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 26px;
+            background:
+                radial-gradient(800px 300px at 80% 0%, rgba(110, 168, 255, .12), transparent 60%),
+                radial-gradient(600px 300px at 0% 100%, rgba(159, 106, 255, .10), transparent 55%),
+                linear-gradient(180deg, var(--bg-elev), #0e141b);
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 10px 0 8px;
+            line-height: 1.15
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 16px
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, var(--brand), var(--brand-2));
+            padding: 8px 12px;
+            border-radius: 999px;
+            box-shadow: 0 8px 22px rgba(110, 168, 255, .25);
+        }
+
+        .cta {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #2a3444;
+            background: #161c24;
+            color: #fff;
+            font-weight: 700;
+            transition: 180ms ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            background: #1a202a
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #2a3750, #1c2432);
+            border-color: #334561;
+        }
+
+        .kpis {
+            display: grid;
+            gap: 12px
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--muted)
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #2a3546;
+            background: #121824;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        /* Main sections */
+        main {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 12px 20px 64px
+        }
+
+        section {
+            display: none;
+            animation: fade 240ms ease
+        }
+
+        section.active {
+            display: block
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(4px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        h2 {
+            font-size: 26px;
+            margin: 8px 0 14px
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(12, 1fr)
+        }
+
+        .col-12 {
+            grid-column: span 12
+        }
+
+        .col-6 {
+            grid-column: span 6
+        }
+
+        .col-4 {
+            grid-column: span 4
+        }
+
+        .col-3 {
+            grid-column: span 3
+        }
+
+        @media (max-width:980px) {
+
+            .col-6,
+            .col-4,
+            .col-3 {
+                grid-column: span 12
+            }
+        }
+
+        .panel {
+            background: linear-gradient(180deg, var(--bg-elev), #0f141b);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .panel h3 {
+            margin: 4px 0 8px;
+            font-size: 20px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .list {
+            display: grid;
+            gap: 10px;
+            padding: 0;
+            margin: 0
+        }
+
+        .list ul,
+        .list li {
+            list-style: none
+        }
+
+        .split {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        /* Contact form */
+        .contact {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 1fr 1fr
+        }
+
+        @media (max-width:820px) {
+            .contact {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .field {
+            display: grid;
+            gap: 8px
+        }
+
+        .field label {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .input,
+        textarea {
+            background: #121824;
+            border: 1px solid #2a3546;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 12px;
+            outline: none;
+        }
+
+        .input:focus,
+        textarea:focus {
+            border-color: var(--brand)
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background: #0a0f14;
+        }
+
+        .foot {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 22px 20px;
+            display: grid;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        .foot small {
+            color: #7f8a97
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: 2px
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="bar">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">🧰</div>
+                <div>
+                    <div>Tony Empaquetaduras</div>
+                    <small class="muted">Fábrica de empaques de motor</small>
+                </div>
+            </div>
+            <nav aria-label="Navegación principal">
+                <a class="nav-link active" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#empresa">Empresa</a>
+                <a class="nav-link" href="#servicios">Servicios</a>
+                <a class="nav-link" href="#materiales">Materiales</a>
+                <a class="nav-link" href="#mision">Misión</a>
+                <a class="nav-link" href="#vision">Visión</a>
+                <a class="nav-link" href="#cultura">Cultura</a>
+                <a class="nav-link" href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-card">
+            <span class="badge">Calidad • Respuesta inmediata • A medida</span>
+            <h1>Empaques de alta precisión para motores, fabricados en Arequipa</h1>
+            <p class="lead">
+                Diseñamos y fabricamos empaques a pedido para motores y sistemas mecánicos. Experiencia, materiales
+                óptimos y procesos confiables para asegurar rendimiento y durabilidad.
+            </p>
+            <div class="cta">
+                <a class="btn primary" href="#contacto">Solicitar cotización</a>
+                <a class="btn" href="#servicios">Ver servicios</a>
+            </div>
+        </div>
+        <aside class="hero-card">
+            <div class="kpis">
+                <div class="stat"><span>📍 Vía de Evitamiento KM 2.5 Tda 40 (AMAVE), Cerro Colorado –
+                        Arequipa</span><span class="chip">Ubicación</span></div>
+                <div class="stat"><span>📞 +51 959 997 383</span><span class="chip">Teléfono</span></div>
+                <div class="stat"><span>✉️ tonyempaquetaduras@gmail.com</span><span class="chip">Correo</span></div>
+                <div class="stat"><span>🕗 L–V 8:00–18:00 • S 8:00–14:00</span><span class="chip">Horario</span></div>
+                <div class="split">
+                    <span class="chip">Fundada en 2010</span>
+                    <span class="muted">Más de una década atendiendo el parque automotor peruano.</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <main id="app" role="main">
+        <!-- Inicio -->
+        <section id="inicio" class="active" aria-labelledby="inicio-title">
+            <h2 id="inicio-title">Soluciones de sellado confiables</h2>
+            <div class="grid">
+                <div class="col-6 panel">
+                    <h3>Fabricación a medida</h3>
+                    <p class="muted">
+                        Empaques de precisión para caja, motor, compresora, rueda, láminas y más. Adaptamos cada pieza a
+                        la geometría y función del equipo con estándares estrictos.
+                    </p>
+                    <div class="split">
+                        <span class="chip">Motor</span>
+                        <span class="chip">Caja</span>
+                        <span class="chip">Compresora</span>
+                        <span class="chip">Rueda</span>
+                        <span class="chip">Láminas</span>
+                    </div>
+                </div>
+                <div class="col-6 panel">
+                    <h3>Asesoría en materiales</h3>
+                    <p class="muted">
+                        Seleccionamos el material idóneo según temperatura, presión, fluido y tolerancias. Optimizamos
+                        desempeño y vida útil con criterios técnicos y experiencia en campo.
+                    </p>
+                    <div class="split">
+                        <span class="chip">Resistencia térmica</span>
+                        <span class="chip">Compatibilidad química</span>
+                        <span class="chip">Sellado estable</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Empresa -->
+        <section id="empresa" aria-labelledby="empresa-title">
+            <h2 id="empresa-title">Quiénes somos</h2>
+            <div class="grid">
+                <div class="col-6 panel">
+                    <h3>Origen</h3>
+                    <p class="muted">
+                        Empresa arequipeña dedicada a la fabricación de empaques para todo tipo de motores. Nacimos para
+                        brindar soluciones precisas y confiables al sector automotor e industrial.
+                    </p>
+                </div>
+                <div class="col-6 panel">
+                    <h3>Compromiso</h3>
+                    <p class="muted">
+                        Prioridad en calidad verificable, servicio inmediato y comunicación clara. Aseguramos
+                        compatibilidad y tiempos de entrega responsables.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" aria-labelledby="servicios-title">
+            <h2 id="servicios-title">Servicios</h2>
+            <div class="grid">
+                <div class="col-4 panel">
+                    <h3>Fabricación a pedido</h3>
+                    <p class="muted">
+                        Producción según plano, muestra o especificación técnica. Control de tolerancias y verificación
+                        dimensional para un sellado consistente.
+                    </p>
+                </div>
+                <div class="col-4 panel">
+                    <h3>Asesoría técnica</h3>
+                    <p class="muted">
+                        Recomendaciones de materiales y montaje considerando temperatura, presión y medio de trabajo del
+                        sistema.
+                    </p>
+                </div>
+                <div class="col-4 panel">
+                    <h3>Servicio rápido</h3>
+                    <p class="muted">
+                        Coordinación ágil y tiempos de respuesta cortos para minimizar la parada de equipos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materiales -->
+        <section id="materiales" aria-labelledby="materiales-title">
+            <h2 id="materiales-title">Materiales y aplicaciones</h2>
+            <div class="grid">
+                <div class="col-3 panel">
+                    <h3>Compuestos</h3>
+                    <ul class="list muted">
+                        <li>Fibras con NBR</li>
+                        <li>Grafito expandido</li>
+                        <li>PTFE</li>
+                    </ul>
+                </div>
+                <div class="col-3 panel">
+                    <h3>Metales</h3>
+                    <ul class="list muted">
+                        <li>Acero inoxidable</li>
+                        <li>Cobre</li>
+                        <li>Aluminio</li>
+                    </ul>
+                </div>
+                <div class="col-3 panel">
+                    <h3>Elastómeros</h3>
+                    <ul class="list muted">
+                        <li>EPDM</li>
+                        <li>Viton</li>
+                        <li>Silicona</li>
+                    </ul>
+                </div>
+                <div class="col-3 panel">
+                    <h3>Aplicaciones</h3>
+                    <ul class="list muted">
+                        <li>Alta temperatura</li>
+                        <li>Combustibles y aceites</li>
+                        <li>Agua y refrigerantes</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="muted" style="margin-top:12px">
+                La selección considera fluido, rango térmico, presión y acabado superficial del conjunto, evitando
+                extrusión y fatiga prematura.
+            </p>
+        </section>
+
+        <!-- Misión -->
+        <section id="mision" aria-labelledby="mision-title">
+            <h2 id="mision-title">Misión</h2>
+            <div class="panel">
+                <p class="muted">
+                    Proveer empaques de motor a medida con calidad verificable y asesoría técnica, asegurando
+                    continuidad operativa y rendimiento de nuestros clientes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Visión -->
+        <section id="vision" aria-labelledby="vision-title">
+            <h2 id="vision-title">Visión</h2>
+            <div class="panel">
+                <p class="muted">
+                    Ser la referencia en el sur del Perú en soluciones de sellado y materiales de alto desempeño,
+                    integrando diseño, fabricación y soporte con tiempos ejemplares.
+                </p>
+            </div>
+        </section>
+
+        <!-- Cultura -->
+        <section id="cultura" aria-labelledby="cultura-title">
+            <h2 id="cultura-title">Cultura</h2>
+            <div class="grid">
+                <div class="col-4 panel">
+                    <h3>Orientación al cliente</h3>
+                    <p class="muted">Escuchamos, proponemos y acompañamos con enfoque técnico y honesto.</p>
+                </div>
+                <div class="col-4 panel">
+                    <h3>Excelencia operativa</h3>
+                    <p class="muted">Procesos claros, verificación constante y mejora continua.</p>
+                </div>
+                <div class="col-4 panel">
+                    <h3>Integridad</h3>
+                    <p class="muted">Compromisos realistas y cumplimiento de plazos, sin promesas vacías.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" aria-labelledby="contacto-title">
+            <h2 id="contacto-title">Contacto</h2>
+            <div class="contact">
+                <div class="panel">
+                    <h3>Hablemos</h3>
+                    <p class="muted">
+                        Cotizaciones y asesoría técnica. Respondemos dentro del horario de atención.
+                    </p>
+                    <form id="contact-form" class="list" autocomplete="on" novalidate>
+                        <div class="field">
+                            <label for="nombre">Nombre</label>
+                            <input class="input" id="nombre" name="nombre" type="text" placeholder="Nombre y apellido"
+                                required />
+                        </div>
+                        <div class="field">
+                            <label for="correo">Correo</label>
+                            <input class="input" id="correo" name="correo" type="email" placeholder="nombre@correo.com"
+                                required />
+                        </div>
+                        <div class="field">
+                            <label for="telefono">Teléfono</label>
+                            <input class="input" id="telefono" name="telefono" type="tel" placeholder="+51 ..." />
+                        </div>
+                        <div class="field">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje"
+                                placeholder="Cuéntenos sobre su requerimiento..."></textarea>
+                        </div>
+                        <div class="split">
+                            <button type="submit" class="btn primary">Enviar</button>
+                            <span id="form-status" class="muted" role="status" aria-live="polite"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel">
+                    <h3>Datos</h3>
+                    <ul class="list muted" aria-label="Datos de contacto">
+                        <li>📍 Vía de Evitamiento KM 2.5 Tda 40 (AMAVE), Cerro Colorado – Arequipa</li>
+                        <li>📞 <a href="tel:+51959997383">+51 959 997 383</a></li>
+                        <li>✉️ <a href="mailto:tonyempaquetaduras@gmail.com">tonyempaquetaduras@gmail.com</a></li>
+                        <li>🕗 Lunes a Viernes 8:00–18:00 • Sábado 8:00–14:00</li>
+                    </ul>
+                    <div class="split" style="margin-top:8px">
+                        <a class="btn" rel="noopener" target="_blank"
+                            href="https://www.google.com/maps/search/?api=1&query=Via+de+Evitamiento+KM+2.5+Tda+40+(AMAVE)+Cerro+Colorado+Arequipa">
+                            Ver en Google Maps
+                        </a>
+                        <a class="btn" href="#inicio">Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="foot">
+            <div class="split">
+                <span>🧰 Tony Empaquetaduras</span>
+                <span class="muted">Arequipa, Perú</span>
+            </div>
+            <small>© <span id="year"></span> Tony Empaquetaduras. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <script>
+        // SPA: navegación por hash y estado activo
+        (function () {
+            const sections = [...document.querySelectorAll('main section')];
+            const links = [...document.querySelectorAll('nav .nav-link')];
+
+            function show(hash) {
+                const id = (hash || '#inicio').replace('#', '');
+                sections.forEach(s => s.classList.toggle('active', s.id === id));
+                links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+                if (!location.hash || location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+                // Scroll al inicio de la sección (sin saltos duros)
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Render inicial
+            show(location.hash);
+
+            // Manejo de clicks
+            links.forEach(a => a.addEventListener('click', e => {
+                e.preventDefault();
+                show(a.getAttribute('href'));
+            }));
+
+            // Back/forward
+            window.addEventListener('hashchange', () => show(location.hash));
+
+            // Año del footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Envío básico del formulario
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('form-status');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const data = Object.fromEntries(new FormData(form).entries());
+                // Validación mínima
+                if (!data.nombre || !data.correo) {
+                    status.textContent = 'Por favor, complete nombre y correo.';
+                    status.className = 'muted';
+                    return;
+                }
+                status.textContent = 'Gracias. Hemos recibido su mensaje.';
+                status.className = 'muted';
+                form.reset();
+            });
+
+            // Respeto por reduced motion
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('*').forEach(el => el.style.scrollBehavior = 'auto');
+            }
+        })();
+    </script>
+</body>
+
+</html>
